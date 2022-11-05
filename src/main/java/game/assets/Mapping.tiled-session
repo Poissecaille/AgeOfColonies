@@ -1,0 +1,37 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "grass.tmj": {
+            "scale": 0.5502083333333334,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 481.63574403634976,
+                "y": 320.78758046194616
+            }
+        },
+        "grass.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 566.6666666666666,
+                "y": 233.99999999999997
+            }
+        }
+    },
+    "last.exportedFilePath": "C:/Users/PC/Documents/Dev/AgeOfColonies/Tiles",
+    "last.imagePath": "C:/Users/PC/Downloads",
+    "map.lastUsedExportFilter": "Fichiers de carte JSON (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "openFiles": [
+    ],
+    "project": "Mapping.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}
