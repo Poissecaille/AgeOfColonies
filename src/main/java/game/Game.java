@@ -1,18 +1,15 @@
 package game;
 
-import game.classes.Config;
-import game.classes.LevelGenerator;
+import game.classes.Drawing;
+import game.classes.Window;
 
 public class Game {
-     private Config config;
-     public Game(){
-          this.config = new Config();
-          LevelGenerator levelGenerator = new LevelGenerator(config.getJsonMapFile());
-//          GreenTile greenTile = new GreenTile();
-//          window = new Window(WINDOW_WIDTH,WINDOW_HEIGHT);
-//          window.add(greenTile);
-     }
+    private final int[] screenSize = {800, 800};
 
+    public Game() {
+        Window window = new Window(screenSize[0], screenSize[1]);
+        window.add(new Drawing());
+    }
 
 
 }
