@@ -15,15 +15,6 @@ public class Drawing extends Canvas {
     public Drawing() {
     }
 
-    public void readJsonFromFile(String file) {
-        try {
-            String json = FileUtils.readFileToString(new File(file), "UTF-8");
-            JSONObject object = new JSONObject(json);
-            JSONArray layers = object.getJSONArray("layers");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public void paint(Graphics graphics) {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
