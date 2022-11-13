@@ -45,7 +45,7 @@ public class Map {
                 tilesMap[i][j] = arr.get(i * maxMapSize + j);
             }
         }
-        System.out.print(Arrays.deepToString(this.tilesMap));
+        //System.out.print(Arrays.deepToString(this.tilesMap));
     }
 
 }
