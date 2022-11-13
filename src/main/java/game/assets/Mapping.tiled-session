@@ -3,9 +3,11 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "outdoorTiles.tsx",
     "expandedProjectPaths": [
+        "."
     ],
+    "file.lastUsedOpenFilter": "Tous les Fichiers (*)",
     "fileStates": {
         "grass.tmj": {
             "scale": 0.5502083333333334,
@@ -22,16 +24,42 @@
                 "x": 566.6666666666666,
                 "y": 233.99999999999997
             }
+        },
+        "outdoorTiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "test.tmj": {
+            "scale": 1.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 361,
+                "y": 428.66666666666663
+            }
+        },
+        "test2.tmj": {
+            "scale": 4,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 83.875,
+                "y": 85
+            }
         }
     },
     "last.exportedFilePath": "C:/Users/PC/Documents/Dev/AgeOfColonies/Tiles",
     "last.imagePath": "C:/Users/PC/Downloads",
+    "map.height": 10,
     "map.lastUsedExportFilter": "Fichiers de carte JSON (*.tmj *.json)",
-    "map.lastUsedFormat": "tmx",
+    "map.lastUsedFormat": "json",
+    "map.tileHeight": 32,
+    "map.tileWidth": 32,
+    "map.width": 10,
     "openFiles": [
+        "outdoorTiles.tsx"
     ],
     "project": "Mapping.tiled-project",
     "recentFiles": [
+        "outdoorTiles.tsx"
     ],
     "tileset.lastUsedFormat": "tsx"
 }

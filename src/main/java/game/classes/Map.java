@@ -12,6 +12,11 @@ import java.util.List;
 public class Map {
     private final int maxMapSize;
     private final int[][] tilesMap;
+
+    public int[][] getTilesMap() {
+        return tilesMap;
+    }
+
     public Map(String file, int maxMapSize){
         this.tilesMap = new int[maxMapSize][maxMapSize];
         this.maxMapSize=maxMapSize;
@@ -27,7 +32,7 @@ public class Map {
                 int value = (int) i;
                 arr.add(value);
             }
-            System.out.print(Arrays.deepToString(tilesMap));
+            //System.out.print(Arrays.deepToString(tilesMap));
             return arr;
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -40,6 +45,7 @@ public class Map {
                 tilesMap[i][j] = arr.get(i * maxMapSize + j);
             }
         }
+        System.out.print(Arrays.deepToString(this.tilesMap));
     }
 
 }
