@@ -8,13 +8,11 @@ public class Game {
     private Window window;
 
     public Game() {
-        this.window = new Window();
-        this.mapPanel = new MapPanel(window.getMap().getTilesMap());
-        this.window.add(mapPanel);
-        //this.window.remove(mapPanel);
-        //this.mapPanel.requestFocusInWindow();
-        this.mapPanel.requestFocus();
+        window = new Window();
+        mapPanel = new MapPanel(window.getMap().getTilesMap());
+        window.add(mapPanel);
+        mapPanel.requestFocus();
+        window.setVisible(true);
     }
-
 
 }

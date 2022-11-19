@@ -12,11 +12,11 @@ public class Window extends JFrame {
     }
 
     public Window() {
-        this.map = new Map("C:\\Users\\PC\\IdeaProjects\\AgeOfColonies\\src\\main\\java\\game\\assets\\test3.tmj",maxNumberOfTiles);
+        this.map = new Map("C:\\Users\\PC\\IdeaProjects\\AgeOfColonies\\src\\main\\java\\game\\assets\\test3.tmj", maxNumberOfTiles);
         this.setTitle("AgeOfColonies");
-        this.setSize(this.maxNumberOfTiles*tilesSize[0]-tilesSize[0], this.maxNumberOfTiles*tilesSize[1]);
+        this.setSize(this.maxNumberOfTiles * tilesSize[0], this.maxNumberOfTiles * tilesSize[1]);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        setVisible(true);
     }
 }
