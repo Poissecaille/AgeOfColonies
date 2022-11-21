@@ -11,6 +11,10 @@ public class Window extends JFrame {
         return map;
     }
 
+    public int getMaxNumberOfTiles() {
+        return maxNumberOfTiles;
+    }
+
     public Window() {
         this.map = new Map("C:\\Users\\PC\\IdeaProjects\\AgeOfColonies\\src\\main\\java\\game\\assets\\test3.tmj", maxNumberOfTiles);
         this.setTitle("AgeOfColonies");

@@ -25,16 +25,12 @@ public class MapKeyBoard implements KeyListener {
     public void keyPressed(KeyEvent e) {
         pressedKeys.add(e.getKeyCode());
         if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.UP)) {
-            System.out.println("CONTROL");
             mapPanel.moveCursorUp();
         } else if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.DOWN)) {
-            System.out.println("CONTROL");
             mapPanel.moveCursorDown();
         } else if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.LEFT)) {
-            System.out.println("CONTROL");
             mapPanel.moveCursorLeft();
         } else if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.RIGHT)) {
-            System.out.println("CONTROL");
             mapPanel.moveCursorRight();
         } else if (!pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.UP)) {
             mapPanel.moveCameraUp();

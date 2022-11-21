@@ -9,10 +9,8 @@ public class MapPanel extends JPanel {
     private final int[][] matrix;
 
     private final int GRASS = 58;
-    private int tileDeltaCameraX = 0;
-    private int tileDeltaCameraY = 0;
-    private int tileDeltaCursorX = 0;
-    private int tileDeltaCursorY = 0;
+    private int x;
+    private int y;
 
     public MapPanel(int[][] tilesMap) {
         matrix = tilesMap;
@@ -23,42 +21,50 @@ public class MapPanel extends JPanel {
 
 
     public void moveCursorUp() {
-        tileDeltaCursorY -= 1;
-        repaint();
+        if (gameCursor.getY() > 0) {
+            gameCursor.setY(gameCursor.getY() - tilesSize[1]);
+            repaint();
+        }
     }
 
     public void moveCursorDown() {
-        tileDeltaCursorY += 1;
-        repaint();
+        if (gameCursor.getY() < tilesSize[1] * matrix[0].length - tilesSize[1]) {
+            gameCursor.setY(gameCursor.getY() + tilesSize[1]);
+            repaint();
+        }
     }
 
     public void moveCursorRight() {
-        tileDeltaCursorX += 1;
-        repaint();
+        if (gameCursor.getX() < tilesSize[0] * matrix[0].length - tilesSize[0]) {
+            gameCursor.setX(gameCursor.getX() + tilesSize[0]);
+            repaint();
+        }
     }
 
     public void moveCursorLeft() {
-        tileDeltaCursorX -= 1;
-        repaint();
+        if (gameCursor.getX() > 0) {
+            gameCursor.setX(gameCursor.getX() - tilesSize[0]);
+            repaint();
+        }
     }
 
     public void moveCameraUp() {
-        tileDeltaCameraY += 1;
+        y += tilesSize[1];
         repaint();
     }
 
     public void moveCameraDown() {
-        tileDeltaCameraY -= 1;
+        y -= tilesSize[1];
         repaint();
     }
 
     public void moveCameraRight() {
-        tileDeltaCameraX -= 1;
+        x -= tilesSize[0];
         repaint();
     }
 
     public void moveCameraLeft() {
-        tileDeltaCameraX += 1;
+        x += tilesSize[0];
         repaint();
     }
 
@@ -83,10 +89,10 @@ public class MapPanel extends JPanel {
                         image = toolkit.getImage(path);
                         break;
                 }
-                graphics.drawImage(image, col * tilesSize[0] + tilesSize[0] * tileDeltaCameraX, row * tilesSize[1] + tilesSize[1] * tileDeltaCameraY, this);
+                graphics.drawImage(image, col * tilesSize[0] + x, row * tilesSize[1] + y, this);
             }
         }
-        gameCursor.draw(graphics, tilesSize[0]*tileDeltaCursorX, tilesSize[1]*tileDeltaCursorY, this);
+        gameCursor.draw(graphics, this);
     }
 }
 
