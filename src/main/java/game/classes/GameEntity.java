@@ -1,6 +1,8 @@
 package game.classes;
 
-public abstract class GameEntity {
+import javax.swing.*;
+
+public abstract class GameEntity extends JPanel {
     protected int health = 10;
     protected GameEntityType type;
     protected int movement;

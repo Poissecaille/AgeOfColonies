@@ -6,20 +6,27 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Map {
-    private final int maxMapSize;
+    private final int maxMapSize = 10;
+    private final int[] tilesSize = {64, 64};
     private final int[][] tilesMap;
 
     public int[][] getTilesMap() {
         return tilesMap;
     }
 
-    public Map(String file, int maxMapSize){
+    public int getMaxMapSize() {
+        return maxMapSize;
+    }
+
+    public int[] getTilesSize() {
+        return tilesSize;
+    }
+
+    public Map(String file){
         this.tilesMap = new int[maxMapSize][maxMapSize];
-        this.maxMapSize=maxMapSize;
         buildMatrix(readJsonFromFile(file));
     }
     public List<Integer> readJsonFromFile(String file) {
@@ -45,7 +52,6 @@ public class Map {
                 tilesMap[i][j] = arr.get(i * maxMapSize + j);
             }
         }
-        //System.out.print(Arrays.deepToString(this.tilesMap));
     }
 
 }

@@ -4,12 +4,10 @@ import game.classes.MapPanel;
 import game.classes.Window;
 
 public class Game {
-    private MapPanel mapPanel;
-    private Window window;
 
     public Game() {
-        window = new Window();
-        mapPanel = new MapPanel(window.getMap().getTilesMap());
+        Window window = new Window();
+        MapPanel mapPanel = new MapPanel(window.getMap().getTilesMap(),window.getMap().getTilesSize());
         window.add(mapPanel);
         mapPanel.requestFocus();
         window.setVisible(true);

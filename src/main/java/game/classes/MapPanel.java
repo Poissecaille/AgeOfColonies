@@ -5,16 +5,17 @@ import java.awt.*;
 
 public class MapPanel extends JPanel {
     private final GameCursor gameCursor;
-    private final int[] tilesSize = {64, 64};
+    private final int[] tilesSize;
     private final int[][] matrix;
 
     private final int GRASS = 58;
     private int x;
     private int y;
 
-    public MapPanel(int[][] tilesMap) {
+    public MapPanel(int[][] tilesMap,int[] tilesDimensions) {
         matrix = tilesMap;
-        gameCursor = new GameCursor();
+        tilesSize=tilesDimensions;
+        gameCursor = GameCursor.uniqueInstance();
         this.add(gameCursor);
         addKeyListener(new MapKeyBoard(this));
     }
