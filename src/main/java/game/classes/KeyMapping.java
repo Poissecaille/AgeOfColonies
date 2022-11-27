@@ -2,6 +2,7 @@ package game.classes;
 
 public final class KeyMapping {
     private KeyMapping(){};
+    public static final int ENTER = 10;
     public static final int CONTROL = 17;
     public static final int UP = 38;
     public static final int DOWN = 40;

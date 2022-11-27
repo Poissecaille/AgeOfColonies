@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MapKeyBoard implements KeyListener {
-
     private final MapPanel mapPanel;
 
     public MapKeyBoard(MapPanel panel) {
@@ -15,6 +14,8 @@ public class MapKeyBoard implements KeyListener {
     }
 
     private final Set<Integer> pressedKeys = new HashSet<>();
+
+    private boolean selection = false;
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -24,22 +25,44 @@ public class MapKeyBoard implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         pressedKeys.add(e.getKeyCode());
-        if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.UP)) {
-            mapPanel.moveCursorUp();
-        } else if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.DOWN)) {
-            mapPanel.moveCursorDown();
-        } else if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.LEFT)) {
-            mapPanel.moveCursorLeft();
-        } else if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.RIGHT)) {
-            mapPanel.moveCursorRight();
-        } else if (!pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.UP)) {
-            mapPanel.moveCameraUp();
-        } else if (!pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.DOWN)) {
-            mapPanel.moveCameraDown();
-        } else if (!pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.LEFT)) {
-            mapPanel.moveCameraLeft();
-        } else if (!pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.RIGHT)) {
-            mapPanel.moveCameraRight();
+        //System.out.println(e.getKeyCode());
+        if (!selection) {
+            if (pressedKeys.contains(KeyMapping.ENTER) && mapPanel.checkSelectionIsPossible()
+            ) {
+                selection = true;
+                mapPanel.getGameCursor().setVisible(false);
+            }
+            else if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.UP)) {
+                mapPanel.moveCursorUp();
+            } else if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.DOWN)) {
+                mapPanel.moveCursorDown();
+            } else if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.LEFT)) {
+                mapPanel.moveCursorLeft();
+            } else if (pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.RIGHT)) {
+                mapPanel.moveCursorRight();
+            } else if (!pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.UP)) {
+                mapPanel.moveCameraUp();
+            } else if (!pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.DOWN)) {
+                mapPanel.moveCameraDown();
+            } else if (!pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.LEFT)) {
+                mapPanel.moveCameraLeft();
+            } else if (!pressedKeys.contains(KeyMapping.CONTROL) && pressedKeys.contains(KeyMapping.RIGHT)) {
+                mapPanel.moveCameraRight();
+            }
+        } else {
+            if (pressedKeys.contains(KeyMapping.ENTER)){
+                selection = false;
+                mapPanel.getGameCursor().setVisible(true);
+            }
+            else if (pressedKeys.contains(KeyMapping.UP)) {
+                mapPanel.moveEarthyEntityUp();
+            } else if (pressedKeys.contains(KeyMapping.DOWN)) {
+                mapPanel.moveEarthyEntityDown();
+            } else if (pressedKeys.contains(KeyMapping.LEFT)) {
+                mapPanel.moveEarthyEntityLeft();
+            } else if (pressedKeys.contains(KeyMapping.RIGHT)) {
+                mapPanel.moveEarthyEntityRight();
+            }
         }
     }
 
